@@ -1,0 +1,20 @@
+[project]
+name = "gheymat"
+version = "0.1.1"
+description = "دریافت قیمت دلار و پوند و تبدیل آن به ریال با پایتون"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+  {name = "Ali Heydari", email = "imrrobat@gmail.com"}
+]
+dependencies = [
+  "requests",
+  "beautifulsoup4"
+]
+[project.urls]
+"Homepage" = "https://github.com/imrrobat/gheymat"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
