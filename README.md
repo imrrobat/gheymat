@@ -6,6 +6,8 @@
 اگر به دردت خورد و اگر دوس داشتی برام یه کافی بخر 😁
 https://www.coffeebede.com/mrrobat
 
+![Downloads](https://static.pepy.tech/personalized-badge/gheymat?period=total&units=international_system&left_color=black&right_color=green&left_text=Downloads)
+
 ## آخرین آپدیت
 #### در currency این موارد وجود دارد:
 - قیمت دلار | USD
