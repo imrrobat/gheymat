@@ -18,7 +18,7 @@ def BTC(toman=True):
             final_price = int(float(gh) * dollar_price)
             return int(final_price) // 10
         else:
-            return int(gh)
+            return float(gh)
 
     else:
         return 'BTC price not found.'
