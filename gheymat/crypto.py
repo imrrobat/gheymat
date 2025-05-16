@@ -1,6 +1,6 @@
 import requests as rq 
 from bs4 import BeautifulSoup as bs 
-from currency import USD
+from .currency import USD
 
 
 def BTC(toman=True):
