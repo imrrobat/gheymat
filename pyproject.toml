@@ -1,7 +1,7 @@
 [project]
 name = "gheymat"
-version = "0.1.1"
-description = "دریافت قیمت دلار و پوند و تبدیل آن به ریال با پایتون"
+version = "0.1.2"
+description = "کتابخانه‌ای برای دریافت قیمت ارزها و طلا و..."
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "MIT"}
