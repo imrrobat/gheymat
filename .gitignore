@@ -1,0 +1,12 @@
+# Ignore build artifacts
+dist/
+build/
+*.egg-info/
+
+# Bytecode files
+__pycache__/
+*.py[cod]
+
+# IDE stuff
+.vscode/
+.idea/

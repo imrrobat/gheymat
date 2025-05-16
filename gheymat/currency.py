@@ -10,8 +10,7 @@ def USD(toman=True):
     if price:
         gh = str(price).replace(',', '')
         if toman:
-            toman = int(gh) // 10
-            return toman
+            return int(gh) // 10
         else:
             return int(gh)
 
@@ -26,8 +25,7 @@ def GBP(toman=True):
     if price:
         gh = str(price).replace(',', '')
         if toman:
-            toman = int(gh) // 10
-            return toman
+            return int(gh) // 10
         else:
             return int(gh)
     else:
