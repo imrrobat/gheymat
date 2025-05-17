@@ -31,7 +31,22 @@ def GOLD24(toman=True):
 
     else:
         return 'GOLD price not found.'
-    
+
+def USED_GOLD(toman=True):
+    url = 'https://www.tgju.org/profile/gold_mini_size'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if toman:
+            return int(gh) // 10
+        else:
+            return int(gh)
+
+    else:
+        return 'GOLD price not found.'
+
 def SEKE_BAHAR(toman=True):
     url = 'https://www.tgju.org/profile/sekeb'
     response = rq.get(url)
