@@ -2,15 +2,18 @@ import requests as rq
 from bs4 import BeautifulSoup as bs 
 
 
-def USD(toman=True):
+def USD(toman=True, beauty=False):
     url = 'https://www.tgju.org/profile/price_dollar_rl'
     response = rq.get(url)
     soup = bs(response.text, 'html.parser')
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
     if price:
         gh = str(price).replace(',', '')
-        if toman:
-            return int(gh) // 10
+        if beauty:
+            if toman:
+                return f'{int(gh) // 10:,}'
+            else:
+                return f'{int(gh):,}'
         else:
             return int(gh)
 
@@ -73,4 +76,30 @@ def AED(toman=True):
     else:
         return 'EURO price not found.' 
   
+def CNY(toman=True):
+    url = 'https://www.tgju.org/profile/price_cny'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if toman:
+            return int(gh) // 10
+        else:
+            return int(gh)
+    else:
+        return 'Yuan price not found.'  
     
+def INR(toman=True):
+    url = 'https://www.tgju.org/profile/price_inr'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if toman:
+            return int(gh) // 10
+        else:
+            return int(gh)
+    else:
+        return 'Rupee price not found.'  
