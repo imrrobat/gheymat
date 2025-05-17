@@ -2,8 +2,8 @@ import requests as rq
 from bs4 import BeautifulSoup as bs 
 
 
-def USD(toman=True):
-    url = 'https://www.tgju.org/profile/price_dollar_rl'
+def GOLD18(toman=True):
+    url = 'https://www.tgju.org/profile/geram18'
     response = rq.get(url)
     soup = bs(response.text, 'html.parser')
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
@@ -15,52 +15,10 @@ def USD(toman=True):
             return int(gh)
 
     else:
-        return 'Dollar price not found.'
-
-def GBP(toman=True):
-    url = 'https://www.tgju.org/profile/price_gbp'
-    response = rq.get(url)
-    soup = bs(response.text, 'html.parser')
-    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
-    if price:
-        gh = str(price).replace(',', '')
-        if toman:
-            return int(gh) // 10
-        else:
-            return int(gh)
-    else:
-        return 'Pound price not found.'  
-
-def EUR(toman=True):
-    url = 'https://www.tgju.org/profile/price_eur'
-    response = rq.get(url)
-    soup = bs(response.text, 'html.parser')
-    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
-    if price:
-        gh = str(price).replace(',', '')
-        if toman:
-            return int(gh) // 10
-        else:
-            return int(gh)
-    else:
-        return 'EURO price not found.' 
-
-def TRY(toman=True):
-    url = 'https://www.tgju.org/profile/price_try'
-    response = rq.get(url)
-    soup = bs(response.text, 'html.parser')
-    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
-    if price:
-        gh = str(price).replace(',', '')
-        if toman:
-            return int(gh) // 10
-        else:
-            return int(gh)
-    else:
-        return 'EURO price not found.' 
+        return 'GOLD price not found.'
     
-def AED(toman=True):
-    url = 'https://www.tgju.org/profile/price_aed'
+def GOLD24(toman=True):
+    url = 'https://www.tgju.org/profile/geram24'
     response = rq.get(url)
     soup = bs(response.text, 'html.parser')
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
@@ -70,7 +28,36 @@ def AED(toman=True):
             return int(gh) // 10
         else:
             return int(gh)
+
     else:
-        return 'EURO price not found.' 
-  
+        return 'GOLD price not found.'
     
+def SEKE_BAHAR(toman=True):
+    url = 'https://www.tgju.org/profile/sekeb'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if toman:
+            return int(gh) // 10
+        else:
+            return int(gh)
+
+    else:
+        return 'Seke price not found.'
+    
+def SEKE_EMAM(toman=True):
+    url = 'https://www.tgju.org/profile/sekee'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if toman:
+            return int(gh) // 10
+        else:
+            return int(gh)
+
+    else:
+        return 'Seke price not found.'
