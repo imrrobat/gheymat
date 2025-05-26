@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 from .currency import USD
 
 
-def BTC(toman=True):
+def BTC(toman=True, beauty=False):
     """
     if toman is False, then BTC Price is in $
     """
@@ -13,17 +13,20 @@ def BTC(toman=True):
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
     if price:
         gh = str(price).replace(',', '')
-        if toman:
-            dollar_price = USD(toman=True)
-            final_price = int(float(gh) * dollar_price)
-            return int(final_price) // 10
+        if beauty:
+            if toman:
+                dollar_price = USD(toman=True)
+                final_price = int(float(gh) * dollar_price)
+                return f'{int(final_price) // 10:,}'
+            else:
+                return f'{float(gh):,}'
         else:
             return float(gh)
 
     else:
         return 'BTC price not found.'
     
-def DOGE(toman=True):
+def DOGE(toman=True, beauty=False):
     """
     if toman is False, then DOGE Price is in $
     """
@@ -33,17 +36,20 @@ def DOGE(toman=True):
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
     if price:
         gh = str(price).replace(',', '')
-        if toman:
-            dollar_price = USD(toman=True)
-            final_price = int(float(gh) * dollar_price)
-            return int(final_price) // 10
+        if beauty:
+            if toman:
+                dollar_price = USD(toman=True)
+                final_price = int(float(gh) * dollar_price)
+                return f'{int(final_price) // 10:,}'
+            else:
+                return f'{float(gh):,}'
         else:
             return float(gh)
 
     else:
         return 'DOGE price not found.'
     
-def ETH(toman=True):
+def ETH(toman=True, beauty=False):
     """
     if toman is False, then Ethereum Price is in $
     """
@@ -53,17 +59,20 @@ def ETH(toman=True):
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
     if price:
         gh = str(price).replace(',', '')
-        if toman:
-            dollar_price = USD(toman=True)
-            final_price = int(float(gh) * dollar_price)
-            return int(final_price) // 10
+        if beauty:
+            if toman:
+                dollar_price = USD(toman=True)
+                final_price = int(float(gh) * dollar_price)
+                return f'{int(final_price) // 10:,}'
+            else:
+                return f'{float(gh):,}'
         else:
             return float(gh)
 
     else:
         return 'Ethereum price not found.'
     
-def SOL(toman=True):
+def SOL(toman=True, beauty=False):
     """
     if toman is False, then Solana Price is in $
     """
@@ -73,10 +82,13 @@ def SOL(toman=True):
     price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
     if price:
         gh = str(price).replace(',', '')
-        if toman:
-            dollar_price = USD(toman=True)
-            final_price = int(float(gh) * dollar_price)
-            return int(final_price) // 10
+        if beauty:
+            if toman:
+                dollar_price = USD(toman=True)
+                final_price = int(float(gh) * dollar_price)
+                return f'{int(final_price) // 10:,}'
+            else:
+                return f'{float(gh):,}'
         else:
             return float(gh)
 

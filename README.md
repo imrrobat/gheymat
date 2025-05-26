@@ -17,6 +17,8 @@ https://www.coffeebede.com/mrrobat
 - قیمت یورو | EUR
 - قیمت لیر | TRY
 - قیمت درهم امارات | AED
+- قیمت یوان چین | CNY
+- قیمت روپیه هند | INR
 
 #### در crypto این موارد وجود دارد:
 - قیمت بیت‌کوین | BTC
@@ -43,6 +45,6 @@ pip install gheymat
 ```python
 from gheymat.currency import USD
 
-dollar_price = USD(toman=True)
+dollar_price = USD(toman=True, beauty=False)
 print(dollar_price)
 ```
