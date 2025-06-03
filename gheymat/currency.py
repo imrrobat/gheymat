@@ -69,7 +69,7 @@ def TRY(toman=True, beauty=False):
         else:
             return int(gh)
     else:
-        return 'EURO price not found.' 
+        return 'Turkish lira price not found.' 
     
 def AED(toman=True, beauty=False):
     url = 'https://www.tgju.org/profile/price_aed'
@@ -86,7 +86,7 @@ def AED(toman=True, beauty=False):
         else:
             return int(gh)
     else:
-        return 'EURO price not found.' 
+        return 'United Arab Emirates Dirham price not found.' 
   
 def CNY(toman=True, beauty=False):
     url = 'https://www.tgju.org/profile/price_cny'
@@ -121,3 +121,20 @@ def INR(toman=True, beauty=False):
             return int(gh)
     else:
         return 'Rupee price not found.'  
+    
+def SEK(toman=True, beauty=False):
+    url = 'https://www.tgju.org/profile/price_sek'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if beauty:
+            if toman:
+                return f'{int(gh) // 10:,}'
+            else:
+                return f'{int(gh):,}'
+        else:
+            return int(gh)
+    else:
+        return 'Swedish Krona price not found.'  

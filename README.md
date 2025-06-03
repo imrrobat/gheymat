@@ -19,6 +19,7 @@ https://www.coffeebede.com/mrrobat
 - قیمت درهم امارات | AED
 - قیمت یوان چین | CNY
 - قیمت روپیه هند | INR
+- قیمت کرون سوئد | SEK
 
 #### در crypto این موارد وجود دارد:
 - قیمت بیت‌کوین | BTC
@@ -29,7 +30,8 @@ https://www.coffeebede.com/mrrobat
 - قیمت ریپل | RIPP
 - قیمت دش | DASH
 - قیمت لایت‌کوین | LITE
-  قیمت استلار | STELL
+- قیمت استلار | STELL
+
 #### در metal این موارد وجود دارد:
 - قیمت طلا 18 عیار | GOLD18
 - قیمت طلا 24 عیار | GOLD24
