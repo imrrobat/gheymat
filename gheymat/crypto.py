@@ -2,7 +2,31 @@ import requests as rq
 from bs4 import BeautifulSoup as bs 
 from .currency import USD
 
+def TON(toman=True, beauty=False):
+    """
+    if toman is False, then TON Price is in $
+    """
+    url = 'https://arzdigital.com/coins/toncoin/'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('div', {'class': 'arz-coin-page-data__coin-price coinPrice  pulser-dollar-toncoin'}).text
+    
+    if price:
+        gh = str(price).replace(',', '')
+        if beauty:
+            if toman:
+                dollar_price = USD(toman=True)
+                final_price = int(float(gh) * dollar_price)
+                return f'{int(final_price) // 10:,}'
+            else:
+                return f'{float(gh):,}'
+        else:
+            return float(gh)
 
+    else:
+        return 'TON price not found.'
+    
+    
 def BTC(toman=True, beauty=False):
     """
     if toman is False, then BTC Price is in $

@@ -31,6 +31,7 @@ https://www.coffeebede.com/mrrobat
 - قیمت دش | DASH
 - قیمت لایت‌کوین | LITE
 - قیمت استلار | STELL
+- قیمت تون | TON
 
 #### در metal این موارد وجود دارد:
 - قیمت طلا 18 عیار | GOLD18

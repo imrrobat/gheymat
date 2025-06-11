@@ -1,2 +1,4 @@
-from gheymat.crypto import DOGE
+from gheymat.crypto import TON
+
+
 
