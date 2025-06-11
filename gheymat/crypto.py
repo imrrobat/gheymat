@@ -3,13 +3,20 @@ from bs4 import BeautifulSoup as bs
 from .currency import USD
 
 def TON(toman=True, beauty=False):
-    """
-    if toman is False, then TON Price is in $
-    """
-    url = 'https://arzdigital.com/coins/toncoin/'
-    response = rq.get(url)
-    soup = bs(response.text, 'html.parser')
-    price = soup.find('div', {'class': 'arz-coin-page-data__coin-price coinPrice  pulser-dollar-toncoin'}).text
+    url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
+    parameters = {
+        "symbol": "TON",
+        "convert": "USD"
+    }
+    headers = {
+        "Accepts": "application/json",
+        "X-CMC_PRO_API_KEY": "5f37df0b-f7ae-4377-835a-a63ee76f338d"
+    }
+
+    response = rq.get(url, headers=headers, params=parameters)
+    data = response.json()
+
+    price = data["data"]["TON"]["quote"]["USD"]["price"]
     
     if price:
         gh = str(price).replace(',', '')
