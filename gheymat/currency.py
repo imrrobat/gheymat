@@ -138,3 +138,20 @@ def SEK(toman=True, beauty=False):
             return int(gh)
     else:
         return 'Swedish Krona price not found.'  
+    
+def OMR(toman=True, beauty=False):
+    url = 'https://www.tgju.org/profile/price_omr'
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    price = soup.find('span', {'data-col': 'info.last_trade.PDrCotVal'}).text
+    if price:
+        gh = str(price).replace(',', '')
+        if beauty:
+            if toman:
+                return f'{int(gh) // 10:,}'
+            else:
+                return f'{int(gh):,}'
+        else:
+            return int(gh)
+    else:
+        return 'Oman Rial price not found.'  

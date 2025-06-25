@@ -20,6 +20,7 @@ https://www.coffeebede.com/mrrobat
 - قیمت یوان چین | CNY
 - قیمت روپیه هند | INR
 - قیمت کرون سوئد | SEK
+- قیمت ریال عمان | OMR
 
 #### در crypto این موارد وجود دارد:
 - قیمت بیت‌کوین | BTC
